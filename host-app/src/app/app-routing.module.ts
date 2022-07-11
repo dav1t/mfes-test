@@ -14,7 +14,11 @@ const routes: Routes = [
   },
   {
     path: 'ng-remote',
-    loadChildren: () => import('ngRemote/Module').then((m) => m.AppModule),
+    loadChildren: () =>
+      import('ngRemote/Module').then((m) => {
+        console.log(m);
+        return m.AppModule;
+      }),
   },
 ];
 
